@@ -1,3 +1,4 @@
+
 (() => {
   const list = document.querySelector('.word-list');
   if (!list) return;
@@ -49,7 +50,7 @@
     if (!isPhrase && !wordLine.querySelector('.sound')) addBritishSpeaker(wordLine, word);
   });
 
-  const library = location.pathname.split('/').filter(Boolean)[0];
+  const library = location.pathname.split('/').filter(Boolean).at(-1);
   const counts = {};
   const updatedAt = {};
   const useLocalProgress = location.hostname.endsWith('.github.io');
@@ -173,4 +174,3 @@
       .catch(() => {});
   }
 })();
-

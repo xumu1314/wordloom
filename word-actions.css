@@ -1,0 +1,48 @@
+.word-row {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "word count"
+    "meaning action";
+  column-gap: 16px;
+  row-gap: 8px;
+  align-items: center;
+}
+
+.word-row .w { grid-area: word; margin: 0 !important; }
+.word-row .m { grid-area: meaning; margin: 0 !important; }
+
+.known-count {
+  grid-area: count;
+  min-width: 22px;
+  color: #7d8a82;
+  font: 13px Arial, sans-serif;
+  text-align: right;
+}
+
+.known-button {
+  grid-area: action;
+  border: 1px solid #cfdcd2;
+  border-radius: 5px;
+  background: #fff;
+  color: #3d6850;
+  padding: 5px 9px;
+  font: 13px Arial, "PingFang SC", sans-serif;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.known-button:hover { background: #edf5ef; border-color: #9ebbaa; }
+.known-button:active { transform: scale(.96); }
+.known-button.undo { color: #9a5a28; border-color: #dfbe9d; background: #fff8f1; }
+.known-button:disabled { opacity: .55; cursor: default; }
+
+.word-row .m {
+  cursor: pointer;
+  filter: blur(6px);
+  transition: filter .16s ease;
+  user-select: none;
+}
+
+.word-row .m.revealed { filter: none; }
+

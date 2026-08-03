@@ -1,5 +1,6 @@
 
 (() => {
+  document.querySelector('.nav a[href="../tv/"]')?.remove();
   const list = document.querySelector('.word-list');
   if (!list) return;
 
